@@ -4,7 +4,7 @@ proyecto final
 
 
 {% extends 'vehiculo/base.html' %}
-{% block titulo%} Lista de todos mis Familiares {% endblock %}
+{% block titulo%} Lista de todos mis Carros a la venta{% endblock %}
 {% block contenido %}
     {% for Vehiculo in lista_carros %}
     <ul>
@@ -29,3 +29,19 @@ proyecto final
 
 </body>
 
+{% extends 'vehiculo/base.html' %}
+{% block titulo%} Buscar Carros por Marcas {% endblock %}
+{% block contenido %}
+  
+  <form action="autos/buscar_carros" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+  </form>
+
+  {% for Vehiculo in lista_carros %}
+      <ul>
+          <li> Marca: {{Vehiculo.marca_del_carro}}, Modelo: {{Vehiculo.modelos_del_carro}}, Color: {{Vehiculo.color_del_carro}}, Año: {{Vehiculo.ano_del_carro}}</li>
+      </ul>
+  {% endfor %}
+{% endblock %}
