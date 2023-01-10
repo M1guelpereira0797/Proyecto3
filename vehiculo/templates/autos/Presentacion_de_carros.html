@@ -1,9 +1,9 @@
-{% extends 'vehiculo/base.html' %}
-{% block titulo%} Lista de todos mis Familiares {% endblock %}
+{% extends 'autos/base.html' %}
+{% block titulo%} Lista de todos mis Carros a la venta{% endblock %}
 {% block contenido %}
-    {% for Vehiculo in lista_carros %}
+  {% for Vehiculo in lista_carros %}
     <ul>
-        <li> Marca: {{Vehiculo.marca_del_carro}}, Modelo:{{Vehiculo.modelos_del_carro}}, Color:{{Vehiculo.color_del_carro}}, Año:{{Vehiculo.ano_del_carro}} </li>
+        <li> Marca: {{Vehiculo.marca_del_carro}},  Modelo:{{Vehiculo.modelos_del_carro}}, Color:{{Vehiculo.color_del_carro}}, Año: {{Vehiculo.ano_del_carro}} </li>
     </ul>
   {% endfor %}
 {% endblock %}
