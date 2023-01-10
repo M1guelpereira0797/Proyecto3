@@ -1,0 +1,13 @@
+{% extends 'autos/base.html' %}
+{% block titulo%} Agregar un nuevo carro a la base de datos {% endblock %}
+{% block contenido %}
+  
+  <form action="Agregar_Carro" method="post">
+    {% csrf_token %}
+    {{ form.as_p}}
+    <input type="submit" value="Submit">
+  </form>
+
+  <h2 style="color:green">{{msg_exito}}</h2>
+
+{% endblock %}

@@ -1,17 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UFT-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Presentacion de Carros</title>
-</head>
-    
-<body>
-   
-    ESTA LA PRIMEERA VISTA A LA LISTA DE CARROS
-
-</body>
-
-</html>
+{% extends 'autos/base.html' %}
+{% block titulo%} Lista de todos mis Carros a la venta{% endblock %}
+{% block contenido %}
+  {% for Vehiculo in lista_carros %}
+    <ul>
+        <li> Marca: {{Vehiculo.marca_del_carro}},  Modelo:{{Vehiculo.modelos_del_carro}}, Color:{{Vehiculo.color_del_carro}} </li>
+    </ul>
+  {% endfor %}
+{% endblock %}
